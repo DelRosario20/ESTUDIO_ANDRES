@@ -1,0 +1,336 @@
+\documentclass[onecolumn,12pt]{article} 
+\usepackage{times,xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm
+}
+
+\title{\textbf{PROPUESTA DE ESTUDIO}\\
+\vspace{0.5cm}
+\Large{Cointegración entre Exportaciones No Petroleras y Empleo en Ecuador: Un Análisis de Largo Plazo (2008-2024)}}
+
+\author{\\
+Estudiante de Economía - UNEMI\\
+\textit{Econometría Aplicada}}
+
+\date{Noviembre 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Tema y Contexto del Estudio}
+
+\subsection{Tema de Investigación}
+El presente estudio propone analizar la relación de largo plazo entre las exportaciones no petroleras y el empleo en Ecuador durante el período 2008-2024, mediante la aplicación de técnicas de cointegración. Esta investigación busca determinar si existe un equilibrio de largo plazo entre estas variables macroeconómicas fundamentales para la economía ecuatoriana.
+
+\subsection{Contexto y Justificación}
+Ecuador, como economía pequeña y abierta, ha experimentado importantes transformaciones en su estructura productiva durante las últimas dos décadas. La diversificación de las exportaciones hacia productos no petroleros representa una estrategia crucial para reducir la dependencia del petróleo y generar fuentes sostenibles de empleo. 
+
+La teoría económica sugiere que las exportaciones pueden actuar como motor del crecimiento económico y la generación de empleo a través de múltiples canales: (i) efecto directo mediante la demanda de mano de obra en sectores exportadores, (ii) efectos indirectos a través de encadenamientos productivos, y (iii) efectos multiplicadores en la economía.
+
+\section{Marco Referencial Empírico}
+
+\subsection{Artículo Principal de Referencia}
+\textbf{Artículo Ancla:} Greenaway, D., Hine, R. C., \& Wright, P. (1999). "An empirical assessment of the impact of trade on employment in the United Kingdom". \textit{European Journal of Political Economy}, 15(3), 485-500.
+
+Este artículo proporciona el marco metodológico fundamental para nuestro estudio, estableciendo:
+\begin{itemize}
+    \item La especificación econométrica con variable dependiente en logaritmos
+    \item El análisis de cointegración entre comercio exterior y empleo
+    \item Las pruebas de raíces unitarias (ADF, PP) aplicadas a series temporales
+    \item La interpretación económica de las elasticidades de largo plazo
+\end{itemize}
+
+\subsection{Literatura Complementaria de Soporte}
+
+\textbf{1. Fu, X., \& Balasubramanyam, V. N. (2005).} "Exports, Foreign Direct Investment and Employment: The Case of China". \textit{The World Economy}, 28(4), 607-625.
+\begin{itemize}
+    \item Metodología de cointegración aplicada a países en desarrollo
+    \item Elasticidad empleo-exportaciones en economías emergentes
+\end{itemize}
+
+\textbf{2. Jenkins, R., \& Sen, K. (2006).} "International trade and manufacturing employment in the South: Four country case studies". \textit{Oxford Development Studies}, 34(3), 299-322.
+\begin{itemize}
+    \item Análisis comparativo para América Latina
+    \item Especificación con variables de control relevantes
+\end{itemize}
+
+\textbf{3. Kien, N. T., \& Heo, Y. (2009).} "Impacts of trade liberalization on employment in Vietnam: A system generalized method of moments estimation". \textit{The Developing Economies}, 47(1), 81-103.
+\begin{itemize}
+    \item Aplicación de pruebas de estacionariedad KPSS
+    \item Diagnóstico de residuos en modelos de cointegración
+\end{itemize}
+
+\section{Datos y Metodología Propuesta}
+
+\subsection{Fuentes de Datos}
+Los datos provienen de fuentes oficiales del Ecuador:
+\begin{itemize}
+    \item \textbf{Banco Central del Ecuador (BCE):} Series de exportaciones no petroleras FOB (millones USD)
+    \item \textbf{Instituto Nacional de Estadística y Censos (INEC):} Datos de empleo nacional (miles de personas)
+    \item \textbf{Periodicidad:} Trimestral
+    \item \textbf{Período:} 2008Q2 - 2024Q4 (67 observaciones)
+\end{itemize}
+
+\subsection{Variables del Modelo}
+
+\begin{table}[H]
+\centering
+\caption{Definición de Variables}
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{llll}
+\toprule
+\textbf{Variable} & \textbf{Notación} & \textbf{Descripción} & \textbf{Transformación} \\
+\midrule
+Dependiente & $logEMP_t$ & Empleo total nacional & Logaritmo natural \\
+Independiente principal & $logEXPNP_t$ & Exportaciones no petroleras & Logaritmo natural \\
+Control 1 & $logTCER_t$ & Tipo de cambio efectivo real & Logaritmo natural \\
+Control 2 & $logSAL_t$ & Salario real promedio & Logaritmo natural \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+
+\subsection{Especificación del Modelo}
+Siguiendo a Greenaway et al. (1999), el modelo de largo plazo se especifica como:
+
+\begin{equation}
+logEMP_t = \beta_0 + \beta_1 logEXPNP_t + \beta_2 logTCER_t + \beta_3 logSAL_t + \varepsilon_t
+\end{equation}
+
+Donde:
+\begin{itemize}
+    \item $\beta_1$ > 0: Elasticidad empleo-exportaciones (esperada positiva)
+    \item $\beta_2$ > 0: Efecto del tipo de cambio real (depreciación estimula empleo)
+    \item $\beta_3$ < 0: Efecto del salario real (relación inversa con demanda laboral)
+\end{itemize}
+
+\subsection{Metodología Econométrica}
+
+\subsubsection{Análisis de Integración}
+\begin{enumerate}
+    \item \textbf{Pruebas de raíz unitaria en niveles:}
+    \begin{itemize}
+        \item Augmented Dickey-Fuller (ADF)
+        \item Phillips-Perron (PP)
+        \item Kwiatkowski-Phillips-Schmidt-Shin (KPSS)
+    \end{itemize}
+    
+    \item \textbf{Decisión sobre opciones deterministas:}
+    \begin{itemize}
+        \item Evaluar significancia de tendencia: $y_t = \alpha + \beta t + \varepsilon_t$
+        \item Si tendencia significativa → usar opción \texttt{trend}
+        \item Si solo constante significativa → usar opción \texttt{drift}
+    \end{itemize}
+    
+    \item \textbf{Pruebas en primeras diferencias:}
+    \begin{itemize}
+        \item Verificar orden de integración I(1)
+        \item Aplicar las tres pruebas con opción apropiada
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Estimación y Diagnóstico}
+\begin{enumerate}
+    \item \textbf{Estimación MCO del modelo en niveles}
+    \begin{itemize}
+        \item Requerimiento: $R^2$ > 0.70
+        \item Significancia individual de coeficientes (t-test)
+        \item Interpretación económica de elasticidades
+    \end{itemize}
+    
+    \item \textbf{Diagnóstico de supuestos clásicos:}
+    \begin{itemize}
+        \item Heterocedasticidad: Breusch-Pagan, White
+        \item Autocorrelación: Breusch-Godfrey, Durbin-Watson
+        \item Especificación: Ramsey RESET
+        \item Normalidad: Jarque-Bera
+        \item Multicolinealidad: VIF
+    \end{itemize}
+    
+    \item \textbf{Prueba de cointegración:}
+    \begin{itemize}
+        \item Predicción de residuos: $\hat{\varepsilon}_t$
+        \item Test ADF sobre residuos con opción \texttt{noconstant}
+        \item Si residuos I(0) → Cointegración confirmada
+    \end{itemize}
+\end{enumerate}
+
+\section{Resultados Esperados}
+
+\subsection{Hipótesis de Trabajo}
+\begin{enumerate}
+    \item \textbf{H1:} Las series $logEMP_t$ y $logEXPNP_t$ son integradas de orden 1, I(1)
+    \item \textbf{H2:} Existe cointegración entre empleo y exportaciones no petroleras
+    \item \textbf{H3:} La elasticidad empleo-exportaciones es positiva y significativa ($\beta_1 \in [0.15, 0.35]$)
+    \item \textbf{H4:} Los residuos del modelo son estacionarios I(0)
+\end{enumerate}
+
+\subsection{Implicaciones Económicas Esperadas}
+\begin{itemize}
+    \item \textbf{Elasticidad empleo-exportaciones:} Se espera encontrar que un incremento del 1\% en las exportaciones no petroleras genere un aumento entre 0.15\% y 0.35\% en el empleo, consistente con evidencia internacional para economías similares.
+    
+    \item \textbf{Efecto tipo de cambio:} Una depreciación real del tipo de cambio debería mejorar la competitividad y aumentar el empleo en sectores transables.
+    
+    \item \textbf{Relación de largo plazo:} La cointegración confirmaría que existe un equilibrio estable entre estas variables, validando políticas de promoción de exportaciones como estrategia de empleo.
+\end{itemize}
+
+\section{Cronograma de Actividades}
+
+\begin{table}[H]
+\centering
+\caption{Plan de Trabajo}
+\begin{tabular}{lll}
+\toprule
+\textbf{Fase} & \textbf{Actividad} & \textbf{Duración} \\
+\midrule
+1 & Recopilación y limpieza de datos & 3 días \\
+2 & Análisis descriptivo y gráficos & 2 días \\
+3 & Pruebas de raíces unitarias & 2 días \\
+4 & Estimación del modelo MCO & 1 día \\
+5 & Diagnóstico de supuestos & 2 días \\
+6 & Pruebas de cointegración & 1 día \\
+7 & Interpretación y redacción & 3 días \\
+8 & Revisión y ajustes finales & 1 día \\
+\midrule
+& \textbf{Total} & \textbf{15 días} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Referencias Preliminares}
+
+\begin{enumerate}
+    \item Banco Central del Ecuador. (2024). \textit{Información Estadística Mensual}. Recuperado de: https://www.bce.fin.ec
+
+    \item Fu, X., \& Balasubramanyam, V. N. (2005). Exports, Foreign Direct Investment and Employment: The Case of China. \textit{The World Economy}, 28(4), 607-625.
+
+    \item Greenaway, D., Hine, R. C., \& Wright, P. (1999). An empirical assessment of the impact of trade on employment in the United Kingdom. \textit{European Journal of Political Economy}, 15(3), 485-500.
+
+    \item INEC. (2024). \textit{Encuesta Nacional de Empleo, Desempleo y Subempleo - ENEMDU}. Instituto Nacional de Estadística y Censos.
+
+    \item Jenkins, R., \& Sen, K. (2006). International trade and manufacturing employment in the South: Four country case studies. \textit{Oxford Development Studies}, 34(3), 299-322.
+
+    \item Kien, N. T., \& Heo, Y. (2009). Impacts of trade liberalization on employment in Vietnam: A system generalized method of moments estimation. \textit{The Developing Economies}, 47(1), 81-103.
+
+    \item Maridueña, Á. (2024). \textit{Manual de Cointegración en Stata: Caso aplicado PIB y Consumo}. Universidad Estatal de Milagro (UNEMI).
+\end{enumerate}
+
+\section{Anexo: Comandos Stata Preliminares}
+
+\begin{verbatim}
+* ===================================
+* ANÁLISIS DE COINTEGRACIÓN 
+* Exportaciones No Petroleras y Empleo
+* ===================================
+
+clear all
+set more off
+
+* Importar datos (formato trimestral)
+import excel "datos_ecuador.xlsx", sheet("Trimestral") firstrow clear
+
+* Generar serie temporal
+gen time = tq(2008q2) + _n - 1
+format time %tq
+tsset time
+
+* Transformación logarítmica
+gen logEMP = log(Empleo)
+gen logEXPNP = log(EXP_NO_PETROLERAS)
+gen logTCER = log(TCER)
+gen logSAL = log(SALARIO_REAL)
+
+label var logEMP "Log Empleo"
+label var logEXPNP "Log Exportaciones No Petroleras"
+label var logTCER "Log Tipo Cambio Real"
+label var logSAL "Log Salario Real"
+
+* ===================================
+* 1. ANÁLISIS DE ESTACIONARIEDAD
+* ===================================
+
+* Identificación de componentes deterministas
+gen t = _n
+reg logEMP t
+reg logEXPNP t
+
+* Tests en niveles con tendencia
+dfuller logEMP, trend
+pperron logEMP, trend  
+kpss logEMP, trend
+
+dfuller logEXPNP, trend
+pperron logEXPNP, trend
+kpss logEXPNP, trend
+
+* Primeras diferencias
+gen d_logEMP = D.logEMP
+gen d_logEXPNP = D.logEXPNP
+
+* Tests en diferencias
+dfuller d_logEMP, drift
+pperron d_logEMP, drift
+kpss d_logEMP, drift
+
+* ===================================
+* 2. MODELO DE COINTEGRACIÓN
+* ===================================
+
+* Regresión MCO
+reg logEMP logEXPNP logTCER logSAL
+
+* Predicción de residuos
+predict ehat, resid
+
+* ===================================
+* 3. DIAGNÓSTICO DEL MODELO
+* ===================================
+
+* Heterocedasticidad
+estat hettest
+estat imtest, white
+
+* Autocorrelación  
+estat bgodfrey, lags(1/4)
+estat dwatson
+
+* Especificación
+estat ovtest
+
+* Normalidad
+predict res1, resid
+swilk res1
+sktest res1
+
+* Multicolinealidad
+vif
+
+* ===================================
+* 4. TEST DE COINTEGRACIÓN
+* ===================================
+
+* Prueba sobre residuos
+dfuller ehat, noconstant
+pperron ehat, noconstant
+kpss ehat, noconstant
+\end{verbatim}
+
+\end{document}
